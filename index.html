@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Hasanah IT</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center flex-wrap header-items">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Hasanah</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home<br></a></li>
+          <li><a href="#about">About Us</a></li>
+          <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#services">Employer Services</a></li>
+              <li><a href="#services">Candidate Services</a></li>
+              <li><a href="#services">Service Charges</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Others</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#services">Employer Policy</a></li>
+              <li><a href="#services">Job Offer Letter</a></li>
+              <li><a href="#team">Team</a></li>
+            </ul>
+          </li>
+
+
+          <!-- <li><a href="#portfolio">Portfolio</a></li> -->
+          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li> -->
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+
+
+
+      <a class="btn-getstarted" href="#about">Get Started</a>
+
+      <div class="dropdown" style="position: relative; display: inline-block;">
+        <a class="btn-getstarted p-0 d-none d-md-block me-3" href="javascript:void(0);" id="lang-btn">
+          <img src="https://www.sharjeelanjum.com/demos/jobsportal-update/images/lang.png" alt=""
+            style="width:32px;height:32px;">
+        </a>
+        <div id="lang-dropdown">
+
+          <a href="#" title="Arabic" class="dropdown-item px-3 py-2" onclick="changeLanguage('ar')">
+            <span class="flag flag-ar"></span> Arabic
+          </a>
+          <a href="#" title="Bengali" class="dropdown-item px-3 py-2" onclick="changeLanguage('bn')">
+            <span class="flag flag-bn"></span> Bengali
+          </a>
+          <a href="#" title="Chinese" class="dropdown-item px-3 py-2" onclick="changeLanguage('ch')">
+            <span class="flag flag-ch"></span> Chinese
+          </a>
+          <a href="#" title="English" class="dropdown-item px-3 py-2" onclick="changeLanguage('en')">
+            <span class="flag flag-en"></span> English
+          </a>
+          <a href="#" title="Filipino" class="dropdown-item px-3 py-2" onclick="changeLanguage('tl')">
+            <span class="flag flag-tl"></span> Filipino
+          </a>
+          <a href="#" title="French" class="dropdown-item px-3 py-2" onclick="changeLanguage('fr')">
+            <span class="flag flag-fr"></span> French
+          </a>
+          <a href="#" title="Hindi" class="dropdown-item px-3 py-2" onclick="changeLanguage('hi')">
+            <span class="flag flag-hi"></span> Hindi
+          </a>
+          <a href="#" title="Persian" class="dropdown-item px-3 py-2" onclick="changeLanguage('fa')">
+            <span class="flag flag-fa"></span> Persian
+          </a>
+          <a href="#" title="Russian" class="dropdown-item px-3 py-2" onclick="changeLanguage('ru')">
+            <span class="flag flag-ru"></span> Russian
+          </a>
+          <a href="#" title="Turkish" class="dropdown-item px-3 py-2" onclick="changeLanguage('tr')">
+            <span class="flag flag-tr"></span> Turkish
+          </a>
+          <a href="#" title="Urdu" class="dropdown-item px-3 py-2" onclick="changeLanguage('ur')">
+            <span class="flag flag-ur"></span> Urdu
+          </a>
+
+        </div>
+      </div>
+
+
+      <script>
+        document.getElementById('lang-btn').onclick = function (e) {
+          e.preventDefault();
+          var dd = document.getElementById('lang-dropdown');
+          dd.style.display = dd.style.display === 'block' ? 'none' : 'block';
+        };
+        document.addEventListener('click', function (e) {
+          var btn = document.getElementById('lang-btn');
+          var dd = document.getElementById('lang-dropdown');
+          if (!btn.contains(e.target) && !dd.contains(e.target)) {
+            dd.style.display = 'none';
+          }
+        });
+        function changeLanguage(lang) {
+          var select = document.querySelector('.goog-te-combo');
+          if (select) {
+            select.value = lang;
+            select.dispatchEvent(new Event('change'));
+          }
+          document.getElementById('lang-dropdown').style.display = 'none';
+        }
+      </script>
+
+      <!-- Google Translate Widget -->
+      <div id="google_translate_element" style="display:none;"></div>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+      </script>
+      <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      </script>
+
+
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- Start whatsapp poup -->
+  <div class="whatsapp-widget">
+    <div class="whatsapp-popup" id="whatsappPopup">
+      <div class="popup-header">
+        <span>Chat with us</span>
+        <button class="close-btn" onclick="toggleWhatsApp()">×</button>
+      </div>
+      <div class="popup-body">
+        <a href="https://wa.me/8801700000000" target="_blank">
+          <div class="align-items-center d-flex gap-3 justify-content-start">
+            <div class="support-person-image position-relative">
+              <img class="rounded-5"
+                src="https://media-ccu1-2.cdn.whatsapp.net/v/t61.24694-24/169585961_1118360732038338_2984173382743843422_n.jpg?ccb=11-4&oh=01_Q5Aa2gHk2Px3NflqUCtTXYPzNc73cYvGtQ6vgYdVQ1CknRSa1Q&oe=68D816AD&_nc_sid=5e03e0&_nc_cat=111"
+                alt="WeCreativez WhatsApp Support">
+              <span class="support-person-available"></span>
+            </div>
+            <div class="">
+              <div class="support">Service Support</div>
+              <div class="supporter-name">Saiful Islam</div>
+              <div class="supporter-available">Available</div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+    <button class="whatsapp-button" onclick="toggleWhatsApp()">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </button>
+  </div>
+  <script>
+    function toggleWhatsApp() {
+      document.getElementById("whatsappPopup").classList.toggle("active");
+    }
+  </script>
+  <!-- End whatsapp poup -->
+
+  <div class="mobilenav">
+    <ul>
+      <li><a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#5f6368">
+            <path
+              d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z">
+            </path>
+          </svg>
+          <span>Home</span>
+        </a></li>
+
+      <li>
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#5f6368">
+            <path
+              d="M160-120q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160Zm0-80h640v-440H160v440Zm240-520h160v-80H400v80ZM160-200v-440 440Z">
+            </path>
+          </svg>
+          <span>Jobs</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#5f6368">
+            <path
+              d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z">
+            </path>
+          </svg>
+          <span>Companies</span>
+        </a>
+      </li>
+
+
+      <li>
+        <a href="javascript:void();" data-bs-toggle="modal" data-bs-target="#headlogin">
+          <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#5f6368">
+            <path
+              d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z">
+            </path>
+          </svg>
+          <span>Login</span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+  <main class="main">
+
+    <section class="slider-section py-0">
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/img//sliders/JPJ-01.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img//sliders/JPJ-02.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img//sliders/JPJ-02.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <!-- <img src="assets/img/hero-bg-abstract.jpg" alt="" data-aos="fade-in" class=""> -->
+
+      <div class="container">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>CV's / Candidates<br></h2>
+          <p>More than 800 employers each month search their candidates on our website.</p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="row justify-content-end">
+          <div class="col-md-3 mb-5">
+            <form method="get" id="search_by_id">
+              <div class="input-group">
+                <input type="text" class="form-control" name="search_id" placeholder="CV Number/ keyword">
+                <button class="btn btn-outline-primary" type="button">Search</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <form method="GET" id="frm_categories_list">
+              <select name="position_apply" class="form-select" onchange="javascript:frm_categories_list.submit();">
+                <option value="">Position</option>
+                <option value="Tailor">Tailor</option>
+                <option value="Master cutter">Master Cutter</option>
+                <option value="Pattern maker">Pattern Maker</option>
+                <option value="Fashion designer">Fashion Designer</option>
+                <option value="Hand embroider">Hand Embroiderer</option>
+                <option value="Machine embroiderer">Machine Embroiderer</option>
+                <option value="Computer embroiderer">Computer embroiderer</option>
+                <option value="Sales Production manager">Sales Production Manager</option>
+              </select>
+            </form>
+          </div>
+
+          <div class="col-md-3 mb-3">
+            <form method="GET" id="nationality_list">
+              <select name="nationality" class="form-select" onchange="javascript:nationality_list.submit();">
+                <option value="">Nationality</option>
+                <option value="India">India</option>
+                <option value="Filipino">Filipino</option>
+                <option value="Bangladesh">Bangladeshr</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Nepal">Nepal</option>
+                <option value="SriLanka">SriLanka</option>
+                <option value="mix_nationality">Mix Nationality</option>
+
+              </select>
+            </form>
+
+          </div>
+
+          <div class="col-md-3 mb-3">
+            <form method="get" id="frm_gender">
+              <select name="gender" class="form-select" onchange="javascript:frm_gender.submit();">
+                <option value="">Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="mix-nature">Mix Nature</option>
+              </select>
+            </form>
+
+          </div>
+
+          <div class="col-md-3 mb-3">
+            <form method="get" id="frm_present_country">
+              <select name="country" class="form-select" onchange="javascript:frm_present_country.submit();">
+                <option value="">Present Country</option>
+                <option value="United Arab Emirates">UAE</option>
+                <option value="Qatar">Qatar</option>
+                <option value="Oman">Oman</option>
+                <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="Kuwait">Kuwait</option>
+                <option value="Bahrain">Bahrain</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="all">All</option>
+              </select>
+            </form>
+          </div>
+
+        </div>
+
+
+        <div class="row gy-4 mt-5">
+          <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon">
+                <img class="rounded-circle" src="assets/img/testimonials/testimonials-4.jpg" alt="">
+              </div>
+              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            </div>
+          </div><!--End Icon Box -->
+          <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon">
+                <img class="rounded-circle" src="assets/img/team/team-4.jpg" alt="">
+              </div>
+              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            </div>
+          </div><!--End Icon Box -->
+          <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon">
+                <img class="rounded-circle" src="assets/img/team/team-3.jpg" alt="">
+              </div>
+              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            </div>
+          </div><!--End Icon Box -->
+          <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon">
+                <img class="rounded-circle" src="assets/img/team/team-2.jpg" alt="">
+              </div>
+              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            </div>
+          </div><!--End Icon Box -->
+          <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon">
+                <img class="rounded-circle" src="assets/img/team/team-1.jpg" alt="">
+              </div>
+              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            </div>
+          </div><!--End Icon Box -->
+          <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon">
+                <img class="rounded-circle" src="assets/img/testimonials/testimonials-3.jpg" alt="">
+              </div>
+              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            </div>
+          </div><!--End Icon Box -->
+          <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon">
+                <img class="rounded-circle" src="assets/img/testimonials/testimonials-2.jpg" alt="">
+              </div>
+              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            </div>
+          </div><!--End Icon Box -->
+          <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon">
+                <img class="rounded-circle" src="assets/img/team/team-1.jpg" alt="">
+              </div>
+              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            </div>
+          </div><!--End Icon Box -->
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Job Vacancies / Career<br></h2>
+        <p>More than 8000 jobs applicants each month search their career on our website.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row justify-content-end">
+          <div class="col-md-3 mb-5">
+            <h5>Last Activity</h5>
+              <form method="get" id="last_activity">
+                <select name="employer_last_activity" class="form-select" onchange="this.form.submit();">
+                    <option value="all">All CVs</option>
+                    <option value="1">1 Day</option>
+                    <option value="7">7 Days</option>
+                    <option value="30">30 Days</option>
+
+                </select>
+            </form>
+          </div>
+        </div>
+
+        <div class="row gy-4">
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Employer</th>
+                  <th scope="col">Posititon</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Job Category</th>
+                  <th scope="col">Location</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><a href="">9134</a></th>
+                  <td>Shop</td>
+                  <td>15 Nov</td>
+                  <td>Childress dress</td>
+                  <td>Saudi Arabia,Saudi Arabia</td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="">4134</a></th>
+                  <td>House ,Company</td>
+                  <td>10 May</td>
+                  <td>Male Thobe and kandura</td>
+                  <td>Saudi Arabia,Saudi Arabia</td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="">7530</a></th>
+                  <td>Shop</td>
+                  <td>15 June</td>
+                  <td>Childress dress</td>
+                  <td>United Arab Emirates,United Arab Emirates</td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="">9134</a></th>
+                  <td>Shop</td>
+                  <td>15 Nov</td>
+                  <td>Childress dress</td>
+                  <td>Saudi Arabia,Saudi Arabia</td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="">4134</a></th>
+                  <td>House ,Company</td>
+                  <td>10 May</td>
+                  <td>Male Thobe and kandura</td>
+                  <td>Saudi Arabia,Saudi Arabia</td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="">7530</a></th>
+                  <td>Shop</td>
+                  <td>15 June</td>
+                  <td>Childress dress</td>
+                  <td>United Arab Emirates,United Arab Emirates</td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="">4134</a></th>
+                  <td>House ,Company</td>
+                  <td>10 May</td>
+                  <td>Male Thobe and kandura</td>
+                  <td>Saudi Arabia,Saudi Arabia</td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="">7530</a></th>
+                  <td>Shop</td>
+                  <td>15 June</td>
+                  <td>Childress dress</td>
+                  <td>United Arab Emirates,United Arab Emirates</td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="">9134</a></th>
+                  <td>Shop</td>
+                  <td>15 Nov</td>
+                  <td>Childress dress</td>
+                  <td>Saudi Arabia,Saudi Arabia</td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="">4134</a></th>
+                  <td>House ,Company</td>
+                  <td>10 May</td>
+                  <td>Male Thobe and kandura</td>
+                  <td>Saudi Arabia,Saudi Arabia</td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="">7530</a></th>
+                  <td>Shop</td>
+                  <td>15 June</td>
+                  <td>Childress dress</td>
+                  <td>United Arab Emirates,United Arab Emirates</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+
+
+
+
+    <!-- Team Section -->
+    <section id="team" class="team section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Team</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Walter White</h4>
+                <span>Chief Executive Officer</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sarah Jhonson</h4>
+                <span>Product Manager</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>William Anderson</h4>
+                <span>CTO</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Amanda Jepson</h4>
+                <span>Accountant</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Team Section -->
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+          <iframe style="border:0; width: 100%; height: 270px;"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
+            frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div><!-- End Google Maps -->
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>A108 Adam Street, New York, NY 535022</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+1 5589 55488 55</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>info@example.com</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+              data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <!-- <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">OnePage</span>
+          </a>
+          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta
+            donna mare fermentum iaculis eu non diam phasellus.</p>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>A108 Adam Street</p>
+          <p>New York, NY 535022</p>
+          <p>United States</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+          <p><strong>Email:</strong> <span>info@example.com</span></p>
+        </div>
+
+      </div> -->
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Hasanah</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="#">BootstrapMade</a> Distributed by <a href="#">Hasanah
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>
