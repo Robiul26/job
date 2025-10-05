@@ -90,7 +90,10 @@
 
 
 
-      <a class="btn-getstarted" href="#about">Get Started</a>
+      <a class="btn-getstarted d-md-block d-none" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#loginModal">Login
+        / Register</a>
+
+
 
       <div class="dropdown" style="position: relative; display: inline-block;">
         <a class="btn-getstarted p-0 d-none d-md-block me-3" href="javascript:void(0);" id="lang-btn">
@@ -176,6 +179,130 @@
   </header>
   <!-- End Header -->
 
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="loginModalLabel">Login</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4">
+              <div class="col-md-12">
+                <label for="">Email</label>
+                <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+              </div>
+              <div class="col-md-12">
+                <label for="">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Password" required="">
+              </div>
+              <div class="col-md-12">
+                <div>
+                  <input type="checkbox" name="remember" id="remember">
+                  <label for="remember"> Remember me</label>
+                  <a href="#" class="float-end">Forgot Password?</a>
+                </div>
+                <button class="login-regi-btn w-100" type="submit">Login</button>
+                <div>
+                  <p class="text-center mt-3">Don't have an account? <a href="javascript:void(0)" data-bs-toggle="modal"
+                      data-bs-target="#registerModal">Register</a></p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="registerModalLabel">Register</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-candidate-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-candidate" type="button" role="tab" aria-controls="pills-candidate"
+                  aria-selected="true">Candidate</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-employer-tab" data-bs-toggle="pill" data-bs-target="#pills-employer"
+                  type="button" role="tab" aria-controls="pills-employer" aria-selected="false">Employer</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-candidate" role="tabpanel"
+                aria-labelledby="pills-candidate-tab" tabindex="0">
+                <div class="row gy-4">
+                  <div class="col-md-12">
+                    <label for="">Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  </div>
+                  <div class="col-md-12">
+                    <label for="">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Password" required="">
+                  </div>
+                  <div class="col-md-12">
+                    <label for="">Confirm Password</label>
+                    <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password"
+                      required="">
+                  </div>
+                  <div class="col-md-12">
+                    <label for="">Phone Number</label>
+                    <input type="number" name="phone" class="form-control" placeholder="Phone Number" required="">
+                  </div>
+
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-employer" role="tabpanel" aria-labelledby="pills-employer-tab"
+                tabindex="0">
+                <div class="row gy-4">
+                  <div class="col-md-12">
+                    <label for="">Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  </div>
+                  <div class="col-md-12">
+                    <label for="">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Password" required="">
+                  </div>
+                  <div class="col-md-12">
+                    <label for="">Confirm Password</label>
+                    <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password"
+                      required="">
+                  </div>
+                  <div class="col-md-12">
+                    <label for="">Employer Name</label>
+                    <input type="number" name="emp_name" class="form-control" placeholder="Employer Name" required="">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="row gy-4 mt-4">
+              <div class="col-md-12">
+                <button class="login-regi-btn w-100" type="submit">Register</button>
+                <div>
+                  <p class="text-center mt-3">Already have an account? <a href="javascript:void(0)"
+                      data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Start whatsapp poup -->
   <div class="whatsapp-widget">
     <div class="whatsapp-popup" id="whatsappPopup">
@@ -248,7 +375,7 @@
 
 
       <li>
-        <a href="javascript:void();" data-bs-toggle="modal" data-bs-target="#headlogin">
+        <a href="javascript:void();" data-bs-toggle="modal" data-bs-target="#loginModal">
           <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#5f6368">
             <path
               d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z">
@@ -490,14 +617,14 @@
         <div class="row justify-content-end">
           <div class="col-md-3 mb-5">
             <h5>Last Activity</h5>
-              <form method="get" id="last_activity">
-                <select name="employer_last_activity" class="form-select" onchange="this.form.submit();">
-                    <option value="all">All CVs</option>
-                    <option value="1">1 Day</option>
-                    <option value="7">7 Days</option>
-                    <option value="30">30 Days</option>
+            <form method="get" id="last_activity">
+              <select name="employer_last_activity" class="form-select" onchange="this.form.submit();">
+                <option value="all">All CVs</option>
+                <option value="1">1 Day</option>
+                <option value="7">7 Days</option>
+                <option value="30">30 Days</option>
 
-                </select>
+              </select>
             </form>
           </div>
         </div>

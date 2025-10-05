@@ -1811,7 +1811,7 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type=submit], .login-regi-btn {
   color: var(--contrast-color);
   background: var(--accent-color);
   border: 0;
@@ -1820,7 +1820,7 @@ section,
   border-radius: 4px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type=submit]:hover, .login-regi-btn:hover{
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
