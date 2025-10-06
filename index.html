@@ -26,9 +26,22 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <!-- Icon -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <style>
+    .form-section {
+      transition: opacity 0.3s ease;
+    }
+
+    .form-section.d-none {
+      opacity: 0;
+    }
+  </style>
 
 </head>
 
@@ -90,7 +103,8 @@
 
 
 
-      <a class="btn-getstarted d-md-block d-none" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#loginModal">Login
+      <a class="btn-getstarted d-md-block d-none" href="javascript:void(0)" data-bs-toggle="modal"
+        data-bs-target="#loginModal">Login
         / Register</a>
 
 
@@ -182,7 +196,7 @@
   <!-- Login Modal -->
   <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="loginModalLabel">Login</h1>
@@ -192,20 +206,25 @@
           <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
             <div class="row gy-4">
               <div class="col-md-12">
-                <label for="">Email</label>
+                <label class="form-label">Email</label>
                 <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
               </div>
               <div class="col-md-12">
-                <label for="">Password</label>
-                <input type="password" name="password" class="form-control" placeholder="Password" required="">
+                <label class="form-label">Password</label>
+                <div class="password-wrapper position-relative">
+                  <input type="password" name="password" class="form-control password-field" placeholder="Password"
+                    required>
+                  <i class="bi bi-eye-slash toggle-password position-absolute end-0 top-50 translate-middle-y me-3"></i>
+                </div>
               </div>
               <div class="col-md-12">
                 <div>
                   <input type="checkbox" name="remember" id="remember">
                   <label for="remember"> Remember me</label>
-                  <a href="#" class="float-end">Forgot Password?</a>
+                  <a href="javascript:void(0)" class="float-end" data-bs-toggle="modal"
+                    data-bs-target="#resetPasswordModal">Forgot Password?</a>
                 </div>
-                <button class="login-regi-btn w-100" type="submit">Login</button>
+                <button class="login-regi-btn w-100 mt-3" type="submit">Login</button>
                 <div>
                   <p class="text-center mt-3">Don't have an account? <a href="javascript:void(0)" data-bs-toggle="modal"
                       data-bs-target="#registerModal">Register</a></p>
@@ -221,88 +240,164 @@
   <!-- Register Modal -->
   <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="registerModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="registerModalLabel">Register</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-              <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-candidate-tab" data-bs-toggle="pill"
-                  data-bs-target="#pills-candidate" type="button" role="tab" aria-controls="pills-candidate"
-                  aria-selected="true">Candidate</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-employer-tab" data-bs-toggle="pill" data-bs-target="#pills-employer"
-                  type="button" role="tab" aria-controls="pills-employer" aria-selected="false">Employer</button>
-              </li>
-            </ul>
-            <div class="tab-content" id="pills-tabContent">
-              <div class="tab-pane fade show active" id="pills-candidate" role="tabpanel"
-                aria-labelledby="pills-candidate-tab" tabindex="0">
-                <div class="row gy-4">
-                  <div class="col-md-12">
-                    <label for="">Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                  </div>
-                  <div class="col-md-12">
-                    <label for="">Password</label>
-                    <input type="password" name="password" class="form-control" placeholder="Password" required="">
-                  </div>
-                  <div class="col-md-12">
-                    <label for="">Confirm Password</label>
-                    <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password"
-                      required="">
-                  </div>
-                  <div class="col-md-12">
-                    <label for="">Phone Number</label>
-                    <input type="number" name="phone" class="form-control" placeholder="Phone Number" required="">
-                  </div>
+          <!-- Toggle Buttons -->
+          <div class="d-flex justify-content-center mb-4">
+            <button type="button" id="btnCandidate" class="btn btn-primary w-50 py-2 me-2 active"><i
+                class="bi bi-person me-2 fs-4 align-middle"></i> <span class="align-middle">Candidate</span></button>
+            <button type="button" id="btnEmployer" class="btn btn-outline-primary w-50 py-2"><i
+                class="bi bi-briefcase me-2 fs-4 align-middle"></i> <span class="align-middle">Employer</span></button>
+          </div>
 
+          <!-- Candidate Form -->
+          <div id="candidateForm" class="form-section">
+            <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+
+              <div class="row gy-3 mb-4">
+                <div class="col-md-12">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="col-md-12">
+                  <label class="form-label">Password</label>
+                  <div class="password-wrapper position-relative">
+                    <input type="password" name="password" class="form-control password-field" placeholder="Password"
+                      required>
+                    <i
+                      class="bi bi-eye-slash toggle-password position-absolute end-0 top-50 translate-middle-y me-3"></i>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <label class="form-label">Confirm Password</label>
+                  <div class="password-wrapper position-relative">
+                    <input type="password" name="confirm_password" class="form-control password-field"
+                      placeholder="Confirm Password" required>
+                    <i
+                      class="bi bi-eye-slash toggle-password position-absolute end-0 top-50 translate-middle-y me-3"></i>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <label class="form-label">Phone Number</label>
+                  <input type="number" name="phone" class="form-control" placeholder="Phone Number" required>
                 </div>
               </div>
-              <div class="tab-pane fade" id="pills-employer" role="tabpanel" aria-labelledby="pills-employer-tab"
-                tabindex="0">
-                <div class="row gy-4">
-                  <div class="col-md-12">
-                    <label for="">Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                  </div>
-                  <div class="col-md-12">
-                    <label for="">Password</label>
-                    <input type="password" name="password" class="form-control" placeholder="Password" required="">
-                  </div>
-                  <div class="col-md-12">
-                    <label for="">Confirm Password</label>
-                    <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password"
-                      required="">
-                  </div>
-                  <div class="col-md-12">
-                    <label for="">Employer Name</label>
-                    <input type="number" name="emp_name" class="form-control" placeholder="Employer Name" required="">
-                  </div>
+              <button class="login-regi-btn w-100" type="submit">Register</button>
+              <p class="text-center mt-3">
+                Already have an account?
+                <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+              </p>
+            </form>
+          </div>
 
+          <!-- Employer Form -->
+          <div id="employerForm" class="form-section d-none">
+            <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+
+              <div class="row gy-3 mb-4">
+                <div class="col-md-12">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
                 </div>
+                <div class="col-md-12">
+                  <label class="form-label">Password</label>
+                  <div class="password-wrapper position-relative">
+                    <input type="password" name="password" class="form-control password-field" placeholder="Password"
+                      required>
+                    <i
+                      class="bi bi-eye-slash toggle-password position-absolute end-0 top-50 translate-middle-y me-3"></i>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <label class="form-label">Confirm Password</label>
+                  <div class="password-wrapper position-relative">
+                    <input type="password" name="confirm_password" class="form-control password-field"
+                      placeholder="Confirm Password" required>
+                    <i
+                      class="bi bi-eye-slash toggle-password position-absolute end-0 top-50 translate-middle-y me-3"></i>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <label class="form-label">Employer Name</label>
+                  <input type="text" name="emp_name" class="form-control" placeholder="Employer Name" required>
+                </div>
+              </div>
+              <button class="login-regi-btn w-100" type="submit">Register</button>
+              <p class="text-center mt-3">
+                Already have an account?
+                <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+              </p>
+            </form>
+          </div>
+
+          <script>
+            const btnCandidate = document.getElementById('btnCandidate');
+            const btnEmployer = document.getElementById('btnEmployer');
+            const candidateForm = document.getElementById('candidateForm');
+            const employerForm = document.getElementById('employerForm');
+
+            btnCandidate.addEventListener('click', () => {
+              btnCandidate.classList.add('btn-primary', 'active');
+              btnCandidate.classList.remove('btn-outline-primary');
+              btnEmployer.classList.remove('btn-primary', 'active');
+              btnEmployer.classList.add('btn-outline-primary');
+              candidateForm.classList.remove('d-none');
+              employerForm.classList.add('d-none');
+            });
+
+            btnEmployer.addEventListener('click', () => {
+              btnEmployer.classList.add('btn-primary', 'active');
+              btnEmployer.classList.remove('btn-outline-primary');
+              btnCandidate.classList.remove('btn-primary', 'active');
+              btnCandidate.classList.add('btn-outline-primary');
+              employerForm.classList.remove('d-none');
+              candidateForm.classList.add('d-none');
+            });
+          </script>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reset Password Modal -->
+  <div class="modal fade" id="resetPasswordModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="resetPasswordModalLabel">Reset Password</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4">
+              <div class="col-md-12">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
               </div>
             </div>
-            <div class="row gy-4 mt-4">
-              <div class="col-md-12">
-                <button class="login-regi-btn w-100" type="submit">Register</button>
-                <div>
-                  <p class="text-center mt-3">Already have an account? <a href="javascript:void(0)"
-                      data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></p>
-                </div>
-              </div>
+            <div class="text-center"><button class="login-regi-btn w-100 mt-3" type="submit">Reset Password</button>
+            </div>
+            <!-- back to login -->
+            <div>
+              <p class="text-center mt-3">Remembered your password? <a href="javascript:void(0)" data-bs-toggle="modal"
+                  data-bs-target="#loginModal">Login</a></p>
             </div>
           </form>
         </div>
       </div>
     </div>
   </div>
-
   <!-- Start whatsapp poup -->
   <div class="whatsapp-widget">
     <div class="whatsapp-popup" id="whatsappPopup">
@@ -389,40 +484,82 @@
   </div>
 
   <main class="main">
-
-    <section class="slider-section py-0">
-      <div id="carouselExampleIndicators" class="carousel slide">
+    <section class="slider-section position-relative">
+      <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <!-- Indicators -->
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
+
+        <!-- Slides -->
         <div class="carousel-inner">
+          <!-- Slide 1 -->
           <div class="carousel-item active">
-            <img src="assets/img//sliders/JPJ-01.jpg" class="d-block w-100" alt="...">
+            <img src="assets/img/sliders/Untitled-design-6.webp" class="d-block w-100 slider-img" alt="...">
+            <div class="carousel-caption text-center">
+              <div class="d-none d-md-block">
+                <h1 class="fw-bold display-5 animate-heading">Build Your Career with Confidence</h1>
+                <p class="lead mb-4">Find the right job that matches your skills and passion. Your future starts here!
+                </p>
+                <a href="javascript:void(0)" class="btn btn-gradient px-4 py-2 rounded-pill" data-bs-toggle="modal"
+                  data-bs-target="#loginModal">
+                  <i class="bi bi-box-arrow-in-right me-2"></i> Login / Register
+                </a>
+              </div>
+
+            </div>
           </div>
+
+          <!-- Slide 2 -->
           <div class="carousel-item">
-            <img src="assets/img//sliders/JPJ-02.jpg" class="d-block w-100" alt="...">
+            <img src="assets/img/sliders/Untitled-design-8.webp" class="d-block w-100 slider-img" alt="...">
+            <div class="carousel-caption text-center">
+              <div class="d-none d-md-block">
+                <h1 class="fw-bold display-5  animate-heading">Empower Your Workforce</h1>
+                <p class="lead mb-4">Employers, find skilled candidates and grow your business with ease.</p>
+                <a href="javascript:void(0)" class="btn btn-gradient px-4 py-2 rounded-pill" data-bs-toggle="modal"
+                  data-bs-target="#loginModal">
+                  <i class="bi bi-briefcase me-2"></i> Post a Job
+                </a>
+              </div>
+
+            </div>
           </div>
+
+          <!-- Slide 3 -->
           <div class="carousel-item">
-            <img src="assets/img//sliders/JPJ-02.jpg" class="d-block w-100" alt="...">
+            <img src="assets/img/sliders/Untitled-design-11.webp" class="d-block w-100 slider-img" alt="...">
+            <div class="carousel-caption text-center">
+              <div class="d-none d-md-block">
+                <h1 class="fw-bold display-5  animate-heading">Connect. Collaborate. Grow.</h1>
+                <p class="lead mb-4">Join a community where opportunities meet talent. Start your journey today.</p>
+                <a href="javascript:void(0)" class="btn btn-gradient px-4 py-2 rounded-pill" data-bs-toggle="modal"
+                  data-bs-target="#loginModal">
+                  <i class="bi bi-person-plus me-2"></i> Get Started
+                </a>
+              </div>
+
+            </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
     </section>
+
+
+
 
     <!-- Hero Section -->
     <section id="hero" class="hero section">
@@ -432,7 +569,7 @@
       <div class="container">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2>CV's / Candidates<br></h2>
+          <h2 class=" animate-heading">CV's / Candidates<br></h2>
           <p>More than 800 employers each month search their candidates on our website.</p>
         </div>
         <!-- End Section Title -->
@@ -515,78 +652,129 @@
 
 
         <div class="row gy-4 mt-5">
+          
           <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon">
                 <img class="rounded-circle" src="assets/img/testimonials/testimonials-4.jpg" alt="">
               </div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4 class="title mb-0"><a href="">Lorem Ipsum</a></h4>
+              <p class="fs-6 mt-0"> Digital Marketing</p>
+              <p class="fs-6 mb-3"><a href="#"><i class="bi bi-geo-alt me-1"></i> Bangladesh</a></p>
+              <a href="#" class="login-regi-btn d-block">
+                <i class="bi bi-info-circle me-1"></i> View Profile
+              </a>
             </div>
           </div><!--End Icon Box -->
-          <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+
+           <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon">
                 <img class="rounded-circle" src="assets/img/team/team-4.jpg" alt="">
               </div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4 class="title mb-0"><a href="">Lorem Ipsum</a></h4>
+              <p class="fs-6 mt-0"> Digital Marketing</p>
+              <p class="fs-6 mb-3"><a href="#"><i class="bi bi-geo-alt me-1"></i> Bangladesh</a></p>
+              <a href="#" class="login-regi-btn d-block">
+                <i class="bi bi-info-circle me-1"></i> View Profile
+              </a>
             </div>
           </div><!--End Icon Box -->
-          <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+
+           <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon">
                 <img class="rounded-circle" src="assets/img/team/team-3.jpg" alt="">
               </div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4 class="title mb-0"><a href="">Lorem Ipsum</a></h4>
+              <p class="fs-6 mt-0"> Digital Marketing</p>
+              <p class="fs-6 mb-3"><a href="#"><i class="bi bi-geo-alt me-1"></i> Bangladesh</a></p>
+              <a href="#" class="login-regi-btn d-block">
+                <i class="bi bi-info-circle me-1"></i> View Profile
+              </a>
             </div>
           </div><!--End Icon Box -->
-          <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+
+      
+
+           <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon">
                 <img class="rounded-circle" src="assets/img/team/team-2.jpg" alt="">
               </div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4 class="title mb-0"><a href="">Lorem Ipsum</a></h4>
+              <p class="fs-6 mt-0"> Digital Marketing</p>
+              <p class="fs-6 mb-3"><a href="#"><i class="bi bi-geo-alt me-1"></i> Bangladesh</a></p>
+              <a href="#" class="login-regi-btn d-block">
+                <i class="bi bi-info-circle me-1"></i> View Profile
+              </a>
             </div>
           </div><!--End Icon Box -->
-          <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+
+      
+
+           <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon">
                 <img class="rounded-circle" src="assets/img/team/team-1.jpg" alt="">
               </div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4 class="title mb-0"><a href="">Lorem Ipsum</a></h4>
+              <p class="fs-6 mt-0"> Digital Marketing</p>
+              <p class="fs-6 mb-3"><a href="#"><i class="bi bi-geo-alt me-1"></i> Bangladesh</a></p>
+              <a href="#" class="login-regi-btn d-block">
+                <i class="bi bi-info-circle me-1"></i> View Profile
+              </a>
             </div>
           </div><!--End Icon Box -->
-          <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+
+      
+
+           <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon">
                 <img class="rounded-circle" src="assets/img/testimonials/testimonials-3.jpg" alt="">
               </div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4 class="title mb-0"><a href="">Lorem Ipsum</a></h4>
+              <p class="fs-6 mt-0"> Digital Marketing</p>
+              <p class="fs-6 mb-3"><a href="#"><i class="bi bi-geo-alt me-1"></i> Bangladesh</a></p>
+              <a href="#" class="login-regi-btn d-block">
+                <i class="bi bi-info-circle me-1"></i> View Profile
+              </a>
             </div>
           </div><!--End Icon Box -->
-          <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+
+      
+
+           <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon">
                 <img class="rounded-circle" src="assets/img/testimonials/testimonials-2.jpg" alt="">
               </div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4 class="title mb-0"><a href="">Lorem Ipsum</a></h4>
+              <p class="fs-6 mt-0"> Digital Marketing</p>
+              <p class="fs-6 mb-3"><a href="#"><i class="bi bi-geo-alt me-1"></i> Bangladesh</a></p>
+              <a href="#" class="login-regi-btn d-block">
+                <i class="bi bi-info-circle me-1"></i> View Profile
+              </a>
             </div>
           </div><!--End Icon Box -->
-          <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+
+      
+
+           <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon">
-                <img class="rounded-circle" src="assets/img/team/team-1.jpg" alt="">
+                <img class="rounded-circle" src="assets/img/testimonials/testimonials-1.jpg" alt="">
               </div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4 class="title mb-0"><a href="">Lorem Ipsum</a></h4>
+              <p class="fs-6 mt-0"> Digital Marketing</p>
+              <p class="fs-6 mb-3"><a href="#"><i class="bi bi-geo-alt me-1"></i> Bangladesh</a></p>
+              <a href="#" class="login-regi-btn d-block">
+                <i class="bi bi-info-circle me-1"></i> View Profile
+              </a>
             </div>
           </div><!--End Icon Box -->
+          
           <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
               <li class="page-item"><a class="page-link" href="#">Previous</a></li>
@@ -608,7 +796,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Job Vacancies / Career<br></h2>
+        <h2 class="animate-heading">Job Vacancies / Career<br></h2>
         <p>More than 8000 jobs applicants each month search their career on our website.</p>
       </div><!-- End Section Title -->
 
@@ -748,7 +936,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Team</h2>
+        <h2 class="animate-heading">Team</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
 
@@ -842,7 +1030,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
+        <h2 class="animate-heading">Contact</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
 
@@ -979,7 +1167,7 @@
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">Hasanah</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-        Designed by <a href="#">BootstrapMade</a> Distributed by <a href="#">Hasanah
+        Designed by <a href="#">Hasanah</a> Distributed by <a href="#">Skillify
       </div>
     </div>
 
@@ -1004,6 +1192,19 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    document.querySelectorAll('.toggle-password').forEach(icon => {
+      icon.addEventListener('click', function () {
+        const input = this.closest('.password-wrapper').querySelector('.password-field');
+        const isPassword = input.type === 'password';
+        input.type = isPassword ? 'text' : 'password';
+        this.classList.toggle('bi-eye');
+        this.classList.toggle('bi-eye-slash');
+      });
+    });
+  </script>
+
 
 
 </body>
